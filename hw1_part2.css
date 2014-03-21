@@ -1,7 +1,7 @@
 body {
   background-image: url(http://subtlepatterns.com/patterns/old_map.png);
   color: gray;
-  font-family: 微軟正黑體;
+  font-family: 'Microsoft Jhenghei';
 }
 .innerContext {
   display: block;
@@ -13,7 +13,7 @@ body {
   color: red;
   font-weight: bold;
   font-size: 14px;
-  font-family: '微軟正黑體', Helvetica, Arial, Sans-Serif;
+  font-family: 'Microsoft Jhenghei', Helvetica, Arial, Sans-Serif;
   vertical-align: middle;
   float: left;
   list-style-type: none;
@@ -67,7 +67,7 @@ body {
   color: red;
   font-weight: bold;
   font-size: 14px;
-  font-family: '微軟正黑體', Helvetica, Arial, Sans-Serif;
+  font-family: 'Microsoft Jhenghei', Helvetica, Arial, Sans-Serif;
 }
 .secondOptionOther li:hover {
   background-color: rgba(200, 180, 100, 0.9);
