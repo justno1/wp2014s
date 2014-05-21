@@ -75,7 +75,7 @@
       <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : '{240934986105772}',
+          appId      : '240934986105772',
           xfbml      : true,
           version    : 'v2.0'
         });
@@ -104,9 +104,7 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
                     FB.api('/me', function (response) {
-                     	$("#hi").text("My ID is" + response.id);
-                    	$("#hi").text("My Username is" + response.username);
-                    	$("#hi").text("My link is" + response.link);
+                     	$("#hi").text("My ID is" + response.id + "My Username is" + response.username +"My link is" + response.link);
 
                     	
                         console.log(response);
@@ -131,7 +129,7 @@
 
 					FB.api('/me/likes', function (response) {
                         for (var i = 0; i < response.length; i++){
-							console.log(response.data.name);
+							console.log(response.data.name[i]);
 							}
                     });
 					
