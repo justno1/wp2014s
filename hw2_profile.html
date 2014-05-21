@@ -102,6 +102,8 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
                     FB.api('/me', function (response) {
+                     	document.write("My ID is" + response.id);
+                    	
                         console.log(response);
                         console.log('My links is' + response.link);
                         console.log('My Username is' + response.username);
