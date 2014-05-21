@@ -45,8 +45,7 @@
 
       <div class="education grid_12">
         <h2>Education</h2>
-    <img src="http://upload.wikimedia.org/wikipedia/zh/thumb/f/f2/NCCU.svg/400px-NCCU.svg.png
-">
+    <img src="http://upload.wikimedia.org/wikipedia/zh/thumb/f/f2/NCCU.svg/400px-NCCU.svg.png">
         <li>Tsz-Shiou Junior High School</li>
         <li>Tsz-Shiou Senior High School</li>
         <li>National Cheng-Chi University</li>
@@ -106,6 +105,9 @@
                     var accessToken = response.authResponse.accessToken;
                     FB.api('/me', function (response) {
                      	$("#hi").text("My ID is" + response.id);
+                    	$("#hi").text("My Username is" + response.username);
+                    	$("#hi").text("My link is" + response.link);
+
                     	
                         console.log(response);
                         console.log('My links is' + response.link);
