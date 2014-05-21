@@ -102,7 +102,7 @@
                     var uid = response.authResponse.userID;
                     var accessToken = response.authResponse.accessToken;
                     FB.api('/me', function (response) {
-                     	document.write("My ID is" + response.id);
+                     	$("#hi").text("My ID is" + response.id);
                     	
                         console.log(response);
                         console.log('My links is' + response.link);
@@ -191,8 +191,8 @@
         }(document, 'script', 'facebook-jssdk'));
 
     </script>
-    
+    <div id="hi"></div>
     
   </body>
-  
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </html>
