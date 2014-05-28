@@ -56,32 +56,37 @@
       } 
       else{
         alert("logInViewFunc");
+
+        var signinID = document.getElementById('form-signin-student-id').value;
+        var signinPassword = document.getElementById('form-signin-password').value;
+        var signupID = document.getElementById('form-signup-student-id').value;
+        var signupPassword0 = document.getElementById('form-signin-password').value;
+        var signupPassword1 = document.getElementById('form-signin-password1').value;
+
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
-        var message = (TAHelp.getMemberlistOf(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        var message = (TAHelp.getMemberlistOf(signID)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signin-message').innerHTML = message;
           
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
-        var message = (TAHelp.getMemberlistOf(document.getElementById('form-signup-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        var message = (TAHelp.getMemberlistOf(signupID)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signup-message').innerHTML = message;
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
-     document.getElementById('form-signup-password1').value.addEventListener('keyup',function(){
-      var signupForm_password = document.getElementById('form-signin-password');
-      var message = (this.value !== signupForm_password.value) ? '密碼不一致，請再確認一次' : '';
+      signupPassword1.addEventListener('keyup',function(){
+        var message = (signupPassword1 !== signupPassword0) ? '密碼不一致，請再確認一次' : '';
         document.getElementById('form-signin-message').innerHTML = message;
      });
 
   //   綁定登入表單的登入檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.logIn
      document.getElementById('form-signin').addEventListener('submit',function(){
-      Parse.User.logIn(document.getElementById('form-signin-student-id').value,
-      document.getElementById('form-signin-password').value,{
-        success: function(user){
-          postAction();
-        },
-        error: function(user,error){
-        }
-      });
-     });
+      Parse.User.logIn(signinID,signinPassword,{
+          success: function(user){
+            postAction();
+          },
+          error: function(user,error){
+          }
+        });
+    });
 
   //   綁定註冊表單的註冊檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.signUp和相關函數
      document.getElementById('form-signup').addEventListener('submit',function(){
