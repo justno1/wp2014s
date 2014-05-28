@@ -51,11 +51,11 @@
       } 
       else{
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
-        var messgae = (TAHelp.isValidStudentID(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        var messgae = (TAHelp.getMemberlistOf(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signin-messgae').innerHTML = message;
           
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
-        var messgae = (TAHelp.isValidStudentID(document.getElementById('form-signup-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        var messgae = (TAHelp.getMemberlistOf(document.getElementById('form-signup-student-id').value)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signup-messgae').innerHTML = message;
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
