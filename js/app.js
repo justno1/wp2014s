@@ -1,11 +1,6 @@
 //Application Key : D1QUmCsQ8oUa8LSLHOWbHLNI6AXuTBlA4W13spz1
 //JavaScript Key : x0kPunkKrfmiMmBj4iIoci4UTh0uJOV80ffLRMfj
 
-var signinID = document.getElementById('form-signin-student-id').value;
-        var signinPassword = document.getElementById('form-signin-password').value;
-        var signupID = document.getElementById('form-signup-student-id').value;
-        var signupPassword0 = document.getElementById('form-signup-password').value;
-        var signupPassword1 = document.getElementById('form-signup-password1').value;
 (function(){
 
  //初始化Parse();
@@ -47,9 +42,6 @@ var signinID = document.getElementById('form-signin-student-id').value;
 
    },
 
-
-
-
    logInViewFunc: function(redirect){
   //   把版型印到瀏覽器上();
       document.getElementById('content').innerHTML = templates.loginView();
@@ -63,26 +55,55 @@ var signinID = document.getElementById('form-signin-student-id').value;
         window.location.hash = '';
       } 
       else{
-        alert("logInViewFunc");
-
-        
+        console.log("logInViewFunc");
 
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
-        var message = (TAHelp.getMemberlistOf(signinID)===false ? '學號不存在，請再確認一次' : '');
-        document.getElementById('form-signin-message').innerHTML = message;
+       document.getElementById('form-signin-student-id').addEventListener("keyup",function(){
+        var signinID = document.getElementById('form-signin-student-id').value;
+        var input = document.getElementById('form-signin-message')
+        if(TAHelp.getMemberlistOf(signinID)===false){
+          input.innerHTML = '學號不存在，請再確認一次';
+          input.style.display = "block";
+        }
+        if(signinID===''){
+          input.style.display = 'none';
+        }
+      });
           
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
-        var message = (TAHelp.getMemberlistOf(signupID)===false ? '學號不存在，請再確認一次' : '');
-        document.getElementById('form-signup-message').innerHTML = message;
+       document.getElementById('form-signup-student-id').addEventListener("keyup",function(){
+        var signupID = document.getElementById('form-signup-student-id').value;
+        var input = document.getElementById('form-signup-message')
+        if(TAHelp.getMemberlistOf(signupID)===false){
+          input.innerHTML = '學號不存在，請再確認一次';
+          input.style.display = "block";
+        }
+        if(signupID===''){
+          input.style.display = 'none';
+        }
+      });
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
-      signupPassword1.addEventListener("keyup",function(){
+      document.getElementById('form-signup-password1').addEventListener("keyup",function(){
+        //console.log("TEST")
+        var signupPassword0 = document.getElementById('form-signup-password').value;
+        var signupPassword1 = document.getElementById('form-signup-password1').value;
+        var input = document.getElementById('form-signup-message')
+        if(signupPassword1 !== signupPassword0){
+          input.innerHTML = '密碼不一致，請再確認一次';
+          input.style.display="block";
+          } else {
+            input.style.display='none';
+          };
         var message = (signupPassword1 !== signupPassword0) ? '密碼不一致，請再確認一次' : '';
-        document.getElementById('form-signin-message').innerHTML = message;
+        
      });
 
   //   綁定登入表單的登入檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.logIn
      document.getElementById('form-signin').addEventListener("submit",function(){
+      var signinID = document.getElementById('form-signin-student-id').value;
+      var signinPassword = document.getElementById('form-signin-password').value;
+
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
             postAction();
