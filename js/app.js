@@ -21,7 +21,7 @@
         if(currentUser){
           ViewFunction();
         }else{
-          window.location.hash = "login/" + window.location.hash;
+          window.location.hash = "login/";
         }
       }
     },
