@@ -110,20 +110,7 @@
           error: function(user,error){
           }
         });
-
-      Parse.User.logIn(
-        document.getElementById("form-signin-student-id").value,document.getElementById("form-signin-password").value,{
-
-          success:function(e){s()},
-          error:function(e,t){i("form-signin-message",function(){
-            return false
-          },
-          "Invaild username or password."
-          )}
-        })
-      },false);
-
-    
+    });
 
   //   綁定註冊表單的註冊檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.signUp和相關函數
      document.getElementById('form-signup').addEventListener('submit',function(){
