@@ -140,12 +140,12 @@
 
    routes:{
     '': index,
-    'evaluation/': peer-evaluation
+    'evaluation/': peer_evaluation
 
    },
 
    index: handler.logInViewFunc,
-   peer-evaluation: handler.evalViewFunc.
+   peer_evaluation: handler.evalViewFunc.
 
  });
 
