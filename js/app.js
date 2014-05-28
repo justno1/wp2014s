@@ -37,7 +37,7 @@
    },
 
    logInViewFunc: function(redirect){
-
+      alert("debug");
   //   把版型印到瀏覽器上();
       document.getElementById('content').innerHTML = templates.loginView();
       var currentUser = Parse.User.current();
