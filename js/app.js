@@ -72,13 +72,13 @@
         document.getElementById('form-signup-message').innerHTML = message;
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
-      signupPassword1.addEventListener('keyup',function(){
+      signupPassword1.addEventListener("keyup",function(){
         var message = (signupPassword1 !== signupPassword0) ? '密碼不一致，請再確認一次' : '';
         document.getElementById('form-signin-message').innerHTML = message;
      });
 
   //   綁定登入表單的登入檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.logIn
-     document.getElementById('form-signin').addEventListener('submit',function(){
+     document.getElementById('form-signin').addEventListener("submit",function(){
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
             postAction();
