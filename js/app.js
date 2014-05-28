@@ -43,7 +43,7 @@
       var currentUser = Parse.User.current();
       var postAction = function(){
         handler.navbarFunc();
-        window.location.hash = (redirect) ? redirect : '';
+        window.location.hash = (redirect) ? redirect : 'index';
       }
 
       if(currentUser){
@@ -141,16 +141,21 @@
 
  };
 
- var router = {
+ var router = Parse.router.extend({
 
-   ‘’: handler.logInViewFunc,
+   routes:{
+    '': index,
+    'evaluation/': peer-evaluation,
 
-   ‘peer-evaluation’: handler.evalViewFunc.
+   },
 
- };
+   index: handler.logInViewFunc,
+   peer-evaluation: handler.evalViewFunc.
+
+ });
 
   this.Router = new router();
   Parse.history.start();
-  handlers.navbar();
+  handlers.navbarFunc();
 
 })();
