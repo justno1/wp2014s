@@ -16,8 +16,6 @@
 // 可選-編寫共用函數();
  var handler = {
 
-
-
    navbarFunc: function(){
     var currentUser = Parse.User.current();
     
@@ -96,10 +94,10 @@
         }
       });
      },false);
+   }
+ },
 
-   },
-
-   evalViewFunc: function(){
+    evalViewFunc: function(){
 
  /*    // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
      var evaluation = Parse.Object.extend("Evaluation");
@@ -135,8 +133,6 @@
 //     把peer review物件裡的東西透過版型印到瀏覽器上();
 
 //     綁定表單送出的事件(); // 如果Parse沒有之前提交過的peer review物件，要自己new一個。或更新分數然後儲存。
-
-     
 
  };
 
