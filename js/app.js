@@ -146,7 +146,7 @@
    },
 
    index: handler.logInViewFunc,
-   peer_evaluation: handler.evalViewFunc
+   peer_evaluation: handler.evalViewFunc,
 
  });
 
