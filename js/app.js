@@ -37,7 +37,6 @@
    },
 
    logInViewFunc: function(redirect){
-      alert("debug");
   //   把版型印到瀏覽器上();
       document.getElementById('content').innerHTML = templates.loginView();
       var currentUser = Parse.User.current();
@@ -50,6 +49,7 @@
         window.location.hash = '';
       } 
       else{
+        alert("logInViewFunc");
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
         var message = (TAHelp.getMemberlistOf(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signin-message').innerHTML = message;
@@ -141,7 +141,6 @@
 
    routes:{
     '': 'index',
-
     'evaluation/': 'peer_evaluation'
 
    },
