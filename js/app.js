@@ -136,7 +136,7 @@
 
     });
 
-    }
+    }}
          
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
@@ -149,6 +149,7 @@
 
  
 
+ 
  var router = Parse.Router.extend({
 
    routes:{
