@@ -161,9 +161,11 @@
                   return e
                 })
               }
-            else{var evalToJSON = parseQuery.toJSON().evaluations}
+            else{
+              var evalToJSON = parseQuery.toJSON().evaluations
+            }
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView();
+            document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
         }
 
     });
