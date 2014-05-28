@@ -34,6 +34,12 @@
        document.getElementById('logoutButton').style.display = "none"; 
      }
 
+     document.getElementById('logoutButton').addEventListener("click",function(){
+      Parse.User.logOut();
+      handler.navbar();
+      window.location.hash = "index/"
+     })
+
    },
 
    logInViewFunc: function(redirect){
