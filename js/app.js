@@ -48,7 +48,7 @@
       var currentUser = Parse.User.current();
       var postAction = function(){
         handler.navbarFunc();
-        window.location.hash = (redirect) ? redirect : 'index';
+        window.location.hash = (redirect) ? redirect : '';
       }
 
       if(currentUser){
@@ -155,12 +155,16 @@
             window.EVAL = parseQuery;
             if(parseQuery===undefined){
               var idCheck = TAHelp.getMemberlistOf(userCurrent.get("username")).filter(function(e){
-                return e.StudentID !== userCurrent.get("username") ? true:false}).map(function(e){e.scores=["0","0","0","0"];
-                return e})}
+                return e.StudentID !== userCurrent.get("username") ? true:false
+              }).map(function(e){
+                  e.scores=["0","0","0","0"];
+                  return e
+                })
+              }
             else{var evalToJSON = parseQuery.toJSON().evaluations}
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView;
-    }
+            document.getElementById("content").innerHTML = userCurrent.evaluationView();
+        }
 
     });
 
