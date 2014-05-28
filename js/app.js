@@ -64,7 +64,7 @@
         var signupPassword1 = document.getElementById('form-signup-password1').value;
 
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
-        var message = (TAHelp.getMemberlistOf(signID)===false ? '學號不存在，請再確認一次' : '');
+        var message = (TAHelp.getMemberlistOf(signinID)===false ? '學號不存在，請再確認一次' : '');
         document.getElementById('form-signin-message').innerHTML = message;
           
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
