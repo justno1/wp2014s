@@ -1,6 +1,11 @@
 //Application Key : D1QUmCsQ8oUa8LSLHOWbHLNI6AXuTBlA4W13spz1
 //JavaScript Key : x0kPunkKrfmiMmBj4iIoci4UTh0uJOV80ffLRMfj
 
+var signinID = document.getElementById('form-signin-student-id').value;
+        var signinPassword = document.getElementById('form-signin-password').value;
+        var signupID = document.getElementById('form-signup-student-id').value;
+        var signupPassword0 = document.getElementById('form-signup-password').value;
+        var signupPassword1 = document.getElementById('form-signup-password1').value;
 (function(){
 
  //初始化Parse();
@@ -42,11 +47,6 @@
 
    },
 
-var signinID = document.getElementById('form-signin-student-id').value;
-        var signinPassword = document.getElementById('form-signin-password').value;
-        var signupID = document.getElementById('form-signup-student-id').value;
-        var signupPassword0 = document.getElementById('form-signup-password').value;
-        var signupPassword1 = document.getElementById('form-signup-password1').value;
 
 
 
