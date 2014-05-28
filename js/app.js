@@ -152,6 +152,6 @@
 
   this.Router = new router();
   Parse.history.start();
-  handlers.navbarFunc();
+  handler.navbarFunc();
 
 })();
