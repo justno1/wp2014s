@@ -102,7 +102,7 @@
   };
 
      // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
-     var evaluation = Parse.Object.extend("Evaluation");
+ /*    var evaluation = Parse.Object.extend("Evaluation");
      var userCurrent = Parse.User.current();
      var parseACL = new Parse.ACL;
          parseACL.setPublicReadAccess(false);
@@ -124,7 +124,7 @@
 
             document.getElementById("content").innerHTML = userCurrent.evaluationView;
 
-    };
+    };  */
          
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
