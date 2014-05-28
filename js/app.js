@@ -24,7 +24,7 @@
           window.location.hash = "login/" + window.location.hash;
         }
       }
-    },
+    },false
   }
 
 
