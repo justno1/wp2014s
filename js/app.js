@@ -64,8 +64,7 @@
         if(TAHelp.getMemberlistOf(signinID)===false){
           input.innerHTML = '學號不存在，請再確認一次';
           input.style.display = "block";
-        }
-        if(TAHelp.getMemberlistOf(signinID)===true){
+        }else(TAHelp.getMemberlistOf(signinID)===true){
           input.style.display = "none";
         }
         if(signinID===''){
