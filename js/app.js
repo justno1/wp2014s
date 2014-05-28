@@ -36,7 +36,7 @@
 
      document.getElementById('logoutButton').addEventListener("click",function(){
       Parse.User.logOut();
-      handler.navbar();
+      handler.navbarFunc();
       window.location.hash = "index/"
      })
 
@@ -103,7 +103,6 @@
      document.getElementById('form-signin').addEventListener("submit",function(){
       var signinID = document.getElementById('form-signin-student-id').value;
       var signinPassword = document.getElementById('form-signin-password').value;
-
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
             postAction();
@@ -111,6 +110,19 @@
           error: function(user,error){
           }
         });
+
+      Parse.User.logIn(
+        document.getElementById("form-signin-student-id").value,document.getElementById("form-signin-password").value,{
+
+          success:function(e){s()},
+          error:function(e,t){i("form-signin-message",function(){
+            return false
+          },
+          "Invaild username or password."
+          )}
+        })
+      },false);
+
     });
 
   //   綁定註冊表單的註冊檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.signUp和相關函數
