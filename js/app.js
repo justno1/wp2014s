@@ -140,8 +140,8 @@
  var router = Parse.Router.extend({
 
    routes:{
-    '': index,
-    'evaluation/': peer_evaluation
+    '': 'index',
+    'evaluation/': 'peer_evaluation'
 
    },
 
