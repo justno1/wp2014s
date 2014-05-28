@@ -24,7 +24,7 @@
           window.location.hash = "login/" + window.location.hash;
         }
       }
-    },false
+    },
   }
 
 
@@ -51,9 +51,8 @@
      document.getElementById('logoutButton').addEventListener("click",function(){
       Parse.User.logOut();
       handler.navbarFunc();
-      window.location.hash = "login/"
+      window.location.hash = "login/";
      })
-
    },
 
    logInViewFunc: function(redirect){
