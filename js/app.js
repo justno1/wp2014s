@@ -51,18 +51,18 @@
       } 
       else{
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
-        var messgae = (TAHelp.getMemberlistOf(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
-        document.getElementById('form-signin-messgae').innerHTML = message;
+        var message = (TAHelp.getMemberlistOf(document.getElementById('form-signin-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        document.getElementById('form-signin-message').innerHTML = message;
           
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
-        var messgae = (TAHelp.getMemberlistOf(document.getElementById('form-signup-student-id').value)===false ? '學號不存在，請再確認一次' : '');
-        document.getElementById('form-signup-messgae').innerHTML = message;
+        var message = (TAHelp.getMemberlistOf(document.getElementById('form-signup-student-id').value)===false ? '學號不存在，請再確認一次' : '');
+        document.getElementById('form-signup-message').innerHTML = message;
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
      document.getElementById('form-signup-password1').value.addEventListener('keyup',function(){
       var signupForm_password = document.getElementById('form-signin-password');
-      var messgae = (this.value !== signupForm_password.value) ? '密碼不一致，請再確認一次' : '';
-        document.getElementById('form-signin-messgae').innerHTML = messgae;
+      var message = (this.value !== signupForm_password.value) ? '密碼不一致，請再確認一次' : '';
+        document.getElementById('form-signin-message').innerHTML = message;
      });
 
   //   綁定登入表單的登入檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.logIn
@@ -89,8 +89,8 @@
           postAction();
         },
         error: function(user,error){
-          document.getElementById('form-signin-messgae').innerHTML =
-          error.messgae + '[' + error.code + ']';
+          document.getElementById('form-signin-message').innerHTML =
+          error.message + '[' + error.code + ']';
         }
         });
         },false);
@@ -101,7 +101,7 @@
 
   };
 
- /*    // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
+     // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
      var evaluation = Parse.Object.extend("Evaluation");
      var userCurrent = Parse.User.current();
      var parseACL = new Parse.ACL;
@@ -125,7 +125,7 @@
             document.getElementById("content").innerHTML = userCurrent.evaluationView;
 
     };
-*/         
+         
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
 
@@ -141,6 +141,7 @@
 
    routes:{
     '': 'index',
+
     'evaluation/': 'peer_evaluation'
 
    },
