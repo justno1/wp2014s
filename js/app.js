@@ -145,7 +145,7 @@
 
    routes:{
     '': index,
-    'evaluation/': peer-evaluation,
+    'evaluation/': peer-evaluation
 
    },
 
