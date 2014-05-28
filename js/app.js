@@ -60,7 +60,7 @@
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
        document.getElementById('form-signin-student-id').addEventListener("keyup",function(){
         var signinID = document.getElementById('form-signin-student-id').value;
-        var input = document.getElementById('form-signin-message')
+        var input = document.getElementById('form-signin-message');
         if(TAHelp.getMemberlistOf(signinID)===false){
           input.innerHTML = '學號不存在，請再確認一次';
           input.style.display = "block";
@@ -76,7 +76,7 @@
  //    綁定註冊表單的學號檢查事件(); // 可以利用TAHelp物件
        document.getElementById('form-signup-student-id').addEventListener("keyup",function(){
         var signupID = document.getElementById('form-signup-student-id').value;
-        var input = document.getElementById('form-signup-message')
+        var input = document.getElementById('form-signup-message');
         if(TAHelp.getMemberlistOf(signupID)===false){
           input.innerHTML = '學號不存在，請再確認一次';
           input.style.display = "block";
