@@ -1,0 +1,35 @@
+﻿@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/reset.css);
+
+@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/960.css);
+
+@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/text.css);
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+body 
+{
+  background-image: url('http://subtlepatterns.com/patterns/tiny_grid.png');
+  font-family: 'Kite One', sans-serif;
+}
+
+.form
+{
+  padding:1em 0 0 3em;
+  display:block;
+}
+
+
+label
+{
+  height:20px;
+  font-size:1.5em;
+}
+
+
+.comments
+{
+  height:20px;
+  font-size:1.5em;  
+}
+
+

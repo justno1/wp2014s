@@ -1,0 +1,46 @@
+﻿@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/reset.css);
+
+@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/960.css);
+
+@import url(http://cs.nccu.edu.tw/~jonesyu/960gs/code/css/text.css);
+
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+@charset "UTF-8";
+
+body {
+  background-image: url('http://subtlepatterns.com/patterns/tiny_grid.png');
+  font-family: 'Kite One', sans-serif;
+}
+.img {
+  width: 900px;
+  position: center;
+  display: block;
+}
+.btnList {
+  list-style-type: none;
+  display: block;
+  position: center;
+  padding: 1em 0 1em 0;
+  font-size: 2em;
+  text-align: center;
+}
+.btnList li {
+  padding: 3px;
+}
+.btnList .btn1 {
+  background-color: rgba(100, 0, 0, 0.8);
+  color: yellow;
+}
+.btnList .btn1 a {
+  text-decoration: none;
+  color: yellow;
+}
+.btnList .btn2 {
+  background-color: rgba(100, 0, 0, 0.8);
+  color: yellow;
+}
+.btnList .btn2 a {
+  text-decoration: none;
+  color: yellow;
+}

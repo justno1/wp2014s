@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/fubamuso/2/edit
+-->
+<head>
+
+  <meta charset="utf-8">
+<LINK REL="stylesheet" TYPE="text/css" HREF="hw2_form.css">
+  <title>Form Page</title>
+
+
+</head>
+
+
+<body class="container_12">
+
+  <div class="form grid_12">
+
+    <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dDZ3dGNNLVFBTjR4bktTNGhQVEFfa3c6MA&amp;ifq" method="post"> 
+      
+    <label class="id" for="id">hidden_id<br></label>
+    <input type="text" name="entry.0.single" id="id" value="100703021">
+    
+    <br>
+    
+    <label class="gender" for="gender">gender<br></label>
+    <input type="radio" name="entry.1.group">Boy<br>
+    <input type="radio" name="entry.1.group">Girl
+    
+    <br>
+    
+    <label class="food" for="favorite_foods">Favorite Foods<br></label>
+    <input type="checkbox" name="entry.2.group">Apple<br>
+    <input type="checkbox" name="entry.2.group">Banana<br>
+    <input type="checkbox" name="entry.2.group">Lemon<br>
+    <input type="checkbox" name="entry.2.group">Watermelon
+    
+    <br>    
+    
+    <label class="relation" for="relation">Relation<br></label>
+    <select name="relation">
+        <option value="single" name="entry.3.single">Single</option>
+        <option value="dating" name="entry.3.single">Dating</option>
+        <option value="married" name="entry.3.single">Married</option>
+        <option value="hardtoexplain" name="entry.3.single">Hard to Explain</option>
+      </select>
+    
+    <br>
+    
+    <label class="email" for="email">Email<br></label>
+    <input type="text" name="entry.4.single">
+
+    <br>
+    
+  <label class="comments" for="comments">Comments<br></label>
+  
+  <textarea name="entry.5.single" id="comments">
+  </textarea>
+    <br>
+  <input type="submit" name="submit" value="submit">
+    
+      </form>
+    
+
+  </div>
+  
+
+</body>
+</html>
