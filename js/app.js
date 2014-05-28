@@ -47,6 +47,7 @@
       document.getElementById('content').innerHTML = templates.loginView();
       var currentUser = Parse.User.current();
       var postAction = function(){
+        alert("HAHAHHAHAA");
         handler.navbarFunc();
         window.location.hash = (redirect) ? redirect : '';
       }
@@ -89,7 +90,6 @@
 
  //    綁定註冊表單的密碼檢查事件(); // 參考上課範例
       document.getElementById('form-signup-password1').addEventListener("keyup",function(){
-        //console.log("TEST")
         var signupPassword0 = document.getElementById('form-signup-password').value;
         var signupPassword1 = document.getElementById('form-signup-password1').value;
         var input = document.getElementById('form-signup-message')
@@ -165,7 +165,7 @@
               var evalToJSON = parseQuery.toJSON().evaluations
             }
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
+            document.getElementById("content").innerHTML = userCurrent.evaluationView();
         }
 
     });
