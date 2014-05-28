@@ -108,11 +108,9 @@
       }
     },
 
-    evalViewFunc: function(){}
+    evalViewFunc: function(){
 
-  };
-
-     // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
+           // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
      var evaluation = Parse.Object.extend("Evaluation");
      var userCurrent = Parse.User.current();
      var parseACL = new Parse.ACL;
@@ -134,6 +132,9 @@
             else{var evalToJSON = parseQuery.toJSON().evaluations}
 
             document.getElementById("content").innerHTML = userCurrent.evaluationView;
+    }
+
+    });
 
     };
          
