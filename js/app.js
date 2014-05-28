@@ -14,6 +14,20 @@
   }); 
 
 // 可選-編寫共用函數();
+  var pagingCheck = {
+    loginRequiredView: function(ViewFunction){
+      return function(){
+        var currentUser = Parse.User.current();
+        if(currentUser){
+          ViewFunction();
+        }else{
+          window.location.hash = "login/" + window.location.hash;
+        }
+      }
+    },
+  }
+
+
  var handler = {
 
    navbarFunc: function(){
