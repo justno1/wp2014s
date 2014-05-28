@@ -79,6 +79,8 @@
         if(TAHelp.getMemberlistOf(signupID)===false){
           input.innerHTML = '學號不存在，請再確認一次';
           input.style.display = "block";
+        }else{
+          input.style.display = "none";          
         }
         if(signupID===''){
           input.style.display = 'none';
