@@ -137,7 +137,7 @@
 
  
 
- var router = Parse.router.extend({
+ var router = Parse.Router.extend({
 
    routes:{
     '': index,
