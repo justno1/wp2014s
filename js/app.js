@@ -191,7 +191,7 @@
     'login/*redirect':'login',
    },
 
-   login: hanler.evalViewFunc,
+   login: handler.evalViewFunc,
    index: handler.logInViewFunc,
    peer_evaluation: handler.evalViewFunc,
 
