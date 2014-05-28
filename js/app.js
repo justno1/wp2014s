@@ -97,12 +97,11 @@
       });
      },false);
 
-
-   }},
+   },
 
    evalViewFunc: function(){
 
-     // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
+ /*    // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
      var evaluation = Parse.Object.extend("Evaluation");
      var userCurrent = Parse.User.current();
      var parseACL = new Parse.ACL;
@@ -123,11 +122,11 @@
                 return e})}
             else{var evalToJSON = parseQuery.toJSON().evaluations}
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView
+            document.getElementById("content").innerHTML = userCurrent.evaluationView;
 
-
-          }
-         })
+*/
+    }
+         
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
 
@@ -137,9 +136,7 @@
 
 //     綁定表單送出的事件(); // 如果Parse沒有之前提交過的peer review物件，要自己new一個。或更新分數然後儲存。
 
-     );
-
-   },
+     
 
  };
 
