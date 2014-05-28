@@ -15,10 +15,12 @@
 
 // 可選-編寫共用函數();
  var handler = {
-   var currentUser = Parse.User.current();
+
+
 
    navbarFunc: function(){
-
+    var currentUser = Parse.User.current();
+    
      if(currentUser){
 
  //      顯示哪些button();
