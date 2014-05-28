@@ -63,7 +63,7 @@
       var signupForm_password = document.getElementById('form-signin-password');
       var messgae = (this.value !== signupForm_password.value) ? '密碼不一致，請再確認一次' : '';
         document.getElementById('form-signin-messgae').innerHTML = messgae;
-     })
+     });
 
   //   綁定登入表單的登入檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.logIn
      document.getElementById('form-signin').addEventListener('submit',function(){
@@ -92,10 +92,10 @@
           document.getElementById('form-signin-messgae').innerHTML =
           error.messgae + '[' + error.code + ']';
         }
-      });
-     },false);
-   }
- },
+        });
+        },false);
+      }
+    },
 
     evalViewFunc: function(){
 
@@ -121,9 +121,8 @@
             else{var evalToJSON = parseQuery.toJSON().evaluations}
 
             document.getElementById("content").innerHTML = userCurrent.evaluationView;
-
 */
-    }
+    };
          
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
@@ -134,7 +133,7 @@
 
 //     綁定表單送出的事件(); // 如果Parse沒有之前提交過的peer review物件，要自己new一個。或更新分數然後儲存。
 
- };
+ 
 
  var router = Parse.router.extend({
 
