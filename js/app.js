@@ -37,7 +37,7 @@
      document.getElementById('logoutButton').addEventListener("click",function(){
       Parse.User.logOut();
       handler.navbarFunc();
-      window.location.hash = "index"
+      window.location.hash = "login/"
      })
 
    },
@@ -47,7 +47,6 @@
       document.getElementById('content').innerHTML = templates.loginView();
       var currentUser = Parse.User.current();
       var postAction = function(){
-        alert("HAHAHHAHAA");
         handler.navbarFunc();
         window.location.hash = (redirect) ? redirect : '';
       }
@@ -114,7 +113,7 @@
           error: function(user,error){
           }
         });
-    },false);
+    }, false);
 
   //   綁定註冊表單的註冊檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.signUp和相關函數
      document.getElementById('form-signup').addEventListener('submit',function(){
@@ -162,10 +161,10 @@
                 })
               }
             else{
-              var evalToJSON = parseQuery.toJSON().evaluations
+              var idCheck = parseQuery.toJSON().evaluations;
             }
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView();
+            document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
         }
 
     });
@@ -188,10 +187,11 @@
 
    routes:{
     '': 'index',
-    'evaluation/': 'peer_evaluation'
-
+    'evaluation/': 'peer_evaluation',
+    'login/*redirect':'login',
    },
 
+   login: hanler.evalViewFunc,
    index: handler.logInViewFunc,
    peer_evaluation: handler.evalViewFunc,
 
