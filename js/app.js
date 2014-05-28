@@ -42,6 +42,14 @@
 
    },
 
+var signinID = document.getElementById('form-signin-student-id').value;
+        var signinPassword = document.getElementById('form-signin-password').value;
+        var signupID = document.getElementById('form-signup-student-id').value;
+        var signupPassword0 = document.getElementById('form-signup-password').value;
+        var signupPassword1 = document.getElementById('form-signup-password1').value;
+
+
+
    logInViewFunc: function(redirect){
   //   把版型印到瀏覽器上();
       document.getElementById('content').innerHTML = templates.loginView();
@@ -57,11 +65,7 @@
       else{
         alert("logInViewFunc");
 
-        var signinID = document.getElementById('form-signin-student-id').value;
-        var signinPassword = document.getElementById('form-signin-password').value;
-        var signupID = document.getElementById('form-signup-student-id').value;
-        var signupPassword0 = document.getElementById('form-signup-password').value;
-        var signupPassword1 = document.getElementById('form-signup-password1').value;
+        
 
  //    綁定登入表單的學號檢查事件(); // 可以利用TAHelp物件
         var message = (TAHelp.getMemberlistOf(signinID)===false ? '學號不存在，請再確認一次' : '');
