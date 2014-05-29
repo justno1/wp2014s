@@ -124,7 +124,7 @@
             postAction();
           },
           error: function(user,error){
-            showMessage
+            alert("something wrong");
           }
         });
     }, false);
