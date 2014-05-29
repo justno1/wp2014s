@@ -188,7 +188,7 @@
                   idCheck[i].scores[j] = amount;
                 }
               }
-              if(evaluation)
+              if(evaluation){}
 
             })
         }
