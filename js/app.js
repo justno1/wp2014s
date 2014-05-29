@@ -27,7 +27,6 @@
     },
   };
 
-
  var handler = {
 
    navbarFunc: function(){
@@ -125,6 +124,7 @@
             postAction();
           },
           error: function(user,error){
+            showMessage
           }
         });
     }, false);
@@ -154,7 +154,7 @@
     pagingCheck.loginRequiredView(function(){
 
            // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
-     var evaluation = Parse.Object.extend("Evaluation");
+     var Evaluation = Parse.Object.extend("Evaluation");
      var userCurrent = Parse.User.current();
      var parseACL = new Parse.ACL;
          parseACL.setPublicReadAccess(false);
@@ -162,7 +162,7 @@
          parseACL.setReadAccess(userCurrent,true);
          parseACL.setWriteAccess(userCurrent,true);
 
-     var parseQuery = new Parse.Query(evaluation);
+     var parseQuery = new Parse.Query(Evaluation);
          parseQuery.equalTo("user",userCurrent);
          
          parseQuery.first({
@@ -209,19 +209,19 @@
  
 
  
- var router = Parse.Router.extend({
+   var router = Parse.Router.extend({
 
-   routes:{
-    '': 'index',
-    'evaluation/': 'peer_evaluation',
-    'login/*redirect':'login',
-   },
+     routes:{
+      '': 'index',
+      'evaluation/': 'peer_evaluation',
+      'login/*redirect':'login',
+     },
 
-   login: handler.evalViewFunc,
-   index: handler.logInViewFunc,
-   peer_evaluation: handler.evalViewFunc,
+     login: handler.evalViewFunc,
+     index: handler.logInViewFunc,
+     peer_evaluation: handler.evalViewFunc,
 
- });
+   });
 
   this.Router = new router();
   Parse.history.start();
