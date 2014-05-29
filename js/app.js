@@ -190,7 +190,27 @@
                     idCheck[i].scores[j] = amount;
                   }
                 }
-              })
+
+                if(evaluation === undefined){
+                  evaluation = new Evaluation();
+                  evaluation.set('user',currentUser);
+                  evaluation.setACL(evaluationACL);
+                }
+                console.log(idCheck);
+                evaluation.set('evaluations',idCheck);
+                evaluation.save(null,{
+                  success: function(){
+                    document.getElementById('content').innerHTML = templates.updateSuccessView();
+                  },
+                  error: function(){
+
+                  },
+                });
+              },false);
+          },error: function(object, err){
+
+          }
+          })
             }
 
           });
