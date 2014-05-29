@@ -61,6 +61,7 @@
       var currentUser = Parse.User.current();
       var postAction = function(){
         handler.navbarFunc();
+        alert("HAHAHA");
         window.location.hash = (redirect) ? redirect : '';
       }
 
@@ -149,6 +150,7 @@
     },
 
     evalViewFunc: function(){
+      alert("In evalViewFunc");
     pagingCheck.loginRequiredView(function(){
 
            // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
