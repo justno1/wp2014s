@@ -164,38 +164,36 @@
          parseQuery.equalTo("user",userCurrent);
          
          parseQuery.first({
-          success:function(evaluation){
-            window.EVAL = parseQuery;
-            if(parseQuery===undefined){
-              var idCheck = TAHelp.getMemberlistOf(userCurrent.get("username")).filter(function(e){
-                return e.StudentID !== userCurrent.get("username") ? true:false
-              }).map(function(e){
-                  e.scores=["0","0","0","0"];
-                  return e
-                })
+            success:function(evaluation){
+              window.EVAL = parseQuery;
+              if(parseQuery===undefined){
+                var idCheck = TAHelp.getMemberlistOf(userCurrent.get("username")).filter(function(e){
+                  return e.StudentID !== userCurrent.get("username") ? true:false
+                }).map(function(e){
+                    e.scores=["0","0","0","0"];
+                    return e
+                  })
+                }
+              else{
+                var idCheck = parseQuery.toJSON().evaluations;
               }
-            else{
-              var idCheck = parseQuery.toJSON().evaluations;
+
+              document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
+              document.getElementById("evaluationForm-submit").value = (evaluation === undefined) ? '送出表單' : '修改表單';
+              document.getElementById("evaluationForm").addEventListener('submit',function(){
+                for(var i=0 ; i<idCheck.length ; i++){
+                  for(var j=0 ; j<idCheck[i].scores.length ; j++){
+                    var e = document.getElementById('stu' + idCheck[i].StudentID + '-q' + j);
+                    var amount = e.options[e.selectedIndex].value;
+                    idCheck[i].scores[j] = amount;
+                  }
+                }
+              })
             }
 
-            document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
-            document.getElementById("evaluationForm-submit").value = (evaluation === undefined) ? '送出表單' : '修改表單';
-            document.getElementById("evaluationForm").addEventListener('submit',function(){
-              for(var i=0 ; i<idCheck.length ; i++){
-                for(var j=0 ; j<idCheck[i].scores.length ; j++){
-                  var e = document.getElementById('stu' + idCheck[i].StudentID + '-q' + j);
-                  var amount = e.options[e.selectedIndex].value;
-                  idCheck[i].scores[j] = amount;
-                }
-              }
-              if(evaluation){}
+          });
 
-            })
-        }
-
-    });
-
-    })},
+    })}
          
 
 //     問看看Parse有沒有這個使用者之前提交過的peer review物件(
