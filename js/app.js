@@ -61,7 +61,7 @@
       var postAction = function(){
         handler.navbarFunc();
         alert("HAHAHA");
-        window.location.hash = (redirect) ? redirect : '';
+        window.location.hash = "peer-evaluation/";
       }
 
       if(currentUser){
@@ -121,16 +121,20 @@
       var signinPassword = document.getElementById('form-signin-password').value;
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
-            postAction();
+            //postAction();
+            console.log("TEST")
           },
           error: function(user,error){
-            alert("something wrong");
+            //alert("something wrong");
+            console.log(user);
+            console.log(error);
           }
         });
     }, false);
 
   //   綁定註冊表單的註冊檢查事件(); // 送出還要再檢查一次，這裡會用Parse.User.signUp和相關函數
-     document.getElementById('form-signup').addEventListener('submit',function(){
+     document.getElementById('form-signup').addEventListener('submit',function(j){
+      j.preventDefault();
       var user = new Parse.User();
       user.set("username",document.getElementById('form-signup-student-id').value);
       user.set("password",document.getElementById('form-signup-password').value);
@@ -230,11 +234,11 @@
 
      routes:{
       '': 'index',
-      'evaluation/': 'peer_evaluation',
+      'evaluation/': 'peer-evaluation',
       'login/*redirect':'login',
      },
 
-     login: handler.evalViewFunc,
+     login: handler.logInViewFunc,
      index: handler.logInViewFunc,
      peer_evaluation: handler.evalViewFunc,
 
