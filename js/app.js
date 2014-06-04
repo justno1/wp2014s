@@ -57,15 +57,17 @@
    logInViewFunc: function(redirect){
   //   把版型印到瀏覽器上();
       document.getElementById('content').innerHTML = templates.loginView();
+
       var currentUser = Parse.User.current();
       var postAction = function(){
         handler.navbarFunc();
         alert("HAHAHA");
-        window.location.hash = "peer-evaluation/";
+        window.location.hash = "evaluation/";
       }
 
       if(currentUser){
         window.location.hash = '';
+
       } 
       else{
         console.log("logInViewFunc");
@@ -121,7 +123,7 @@
       var signinPassword = document.getElementById('form-signin-password').value;
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
-            //postAction();
+            postAction();
             console.log("TEST")
           },
           error: function(user,error){
@@ -154,6 +156,8 @@
 
     evalViewFunc: function(){
       alert("In evalViewFunc");
+     document.getElementById('content').innerHTML = templates.loginView();
+
     pagingCheck.loginRequiredView(function(){
 
            // 基本上和上課範例購物車的函數很相似，這邊會用Parse DB
@@ -170,6 +174,7 @@
          
          parseQuery.first({
             success:function(evaluation){
+              alert("parseQuery first success");
               window.EVAL = parseQuery;
               if(parseQuery===undefined){
                 var idCheck = TAHelp.getMemberlistOf(userCurrent.get("username")).filter(function(e){
@@ -183,7 +188,7 @@
                 var idCheck = parseQuery.toJSON().evaluations;
               }
 
-              document.getElementById("content").innerHTML = userCurrent.evaluationView(idCheck);
+              document.getElementById("content").innerHTML = templates.evaluationView(idCheck);
               document.getElementById("evaluationForm-submit").value = (evaluation === undefined) ? '送出表單' : '修改表單';
               document.getElementById("evaluationForm").addEventListener('submit',function(){
                 for(var i=0 ; i<idCheck.length ; i++){
@@ -234,13 +239,13 @@
 
      routes:{
       '': 'index',
-      'evaluation/': 'peer-evaluation',
+      'evaluation/': 'peerEvaluation',
       'login/*redirect':'login',
      },
 
      login: handler.logInViewFunc,
      index: handler.logInViewFunc,
-     peer_evaluation: handler.evalViewFunc,
+     peerEvaluation: handler.evalViewFunc,
 
    });
 
