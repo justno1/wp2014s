@@ -141,11 +141,10 @@
           postAction();
         },
         error: function(user,error){
-          document.getElementById('form-signin-message').innerHTML =
-          error.message + '[' + error.code + ']';
+          document.getElementById('form-signin-message').innerHTML = error.message + '[' + error.code + ']';
         }
-        });
-        },false);
+      });
+    },false);
       }
     },
 
@@ -212,7 +211,7 @@
           }
 
 
-              })
+          })
             });
 
     },};
@@ -225,8 +224,6 @@
 //     把peer review物件裡的東西透過版型印到瀏覽器上();
 
 //     綁定表單送出的事件(); // 如果Parse沒有之前提交過的peer review物件，要自己new一個。或更新分數然後儲存。
-
- 
 
  
    var router = Parse.Router.extend({
