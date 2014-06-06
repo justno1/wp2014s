@@ -62,11 +62,11 @@
       var postAction = function(){
         handler.navbarFunc();
         alert("HAHAHA");
-        window.location.hash = "evaluation/";
+        window.location.hash = (redirect) ? redirect : '';
       }
 
       if(currentUser){
-        window.location.hash = '';
+        //window.location.hash = '';
 
       } 
       else{
@@ -124,7 +124,7 @@
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
             postAction();
-            console.log("TEST")
+            alert("TEST")
           },
           error: function(user,error){
             //alert("something wrong");
@@ -156,7 +156,7 @@
 
     evalViewFunc: function(){
       alert("In evalViewFunc");
-     document.getElementById('content').innerHTML = templates.loginView();
+     document.getElementById('content').innerHTML = templates.evaluationView();
 
     pagingCheck.loginRequiredView(function(){
 
@@ -244,7 +244,7 @@
      },
 
      login: handler.logInViewFunc,
-     index: handler.logInViewFunc,
+     index: handler.evalViewFunc,
      peerEvaluation: handler.evalViewFunc,
 
    });
