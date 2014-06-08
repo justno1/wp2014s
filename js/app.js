@@ -61,7 +61,7 @@
       var currentUser = Parse.User.current();
       var postAction = function(){
         handler.navbarFunc();
-        alert("HAHAHA");
+  //      alert("HAHAHA");
         window.location.hash = (redirect) ? redirect : '';
       }
 
@@ -124,7 +124,7 @@
       Parse.User.logIn(signinID,signinPassword,{
           success: function(user){
             postAction();
-            alert("TEST")
+ //           alert("TEST")
           },
           error: function(user,error){
             //alert("something wrong");
@@ -155,7 +155,7 @@
     },
 
     evalViewFunc: function(){
-      alert("In evalViewFunc");
+//      alert("In evalViewFunc");
      document.getElementById('content').innerHTML = templates.evaluationView();
 
     pagingCheck.loginRequiredView(function(){
@@ -174,7 +174,7 @@
          
          parseQuery.first({
             success:function(evaluation){
-              alert("parseQuery first success");
+    //          alert("parseQuery first success");
               window.EVAL = parseQuery;
               if(parseQuery===undefined){
                 var idCheck = TAHelp.getMemberlistOf(userCurrent.get("username")).filter(function(e){
